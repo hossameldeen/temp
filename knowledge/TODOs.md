@@ -14,4 +14,6 @@ def index
 end
 ```
 
+2) How to represent locations? If with lat & long as floats, what about the precision? And how does Ruby represent numbers with decimal points?
+
 ## Resolved
