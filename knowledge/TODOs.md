@@ -1,4 +1,4 @@
-A non-exhaustive list of TODOs. Helps one to track easily-forgettable stuff, and not be struck by analysis paralysis.
+A non-exhaustive list of TODOs. Helps one to track easily-forgettable stuff, and not be struck by analysis paralysis. Also, **some TODOs are not here; make sure to Ctrl+Shift+F "TODO"**.
 
 ## Not Resolved yet
 

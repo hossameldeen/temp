@@ -37,10 +37,28 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should fail if no context" do
-    skip "Check https://stackoverflow.com/questions/48476911/undefined-method-response-code-for-nilnilclass-for-integrationtest-that-fails"
-    assert_raises(ActiveRecord::NotNullViolation) do
-      post trips_url, params: { trip: { state: @trip.state } }
-    end
-    assert_response 400
+    post trips_url, params: { trip: { state: @trip.state } }
+    assert_response 422
+  end
+
+  test "should fail if no state" do
+    post trips_url, params: { trip: { context: @trip.context } }
+    assert_response 422
+  end
+
+  test "should update state from ongoing to completed" do
+    patch trip_url(trips(:ongoing)), params: { trip: { state: :completed } }
+    assert_response 200
+  end
+
+  # TODO: Assumption: Can change the trip from not_started_yet to completed directly
+  test "should update state from not_started_yet to completed" do
+    patch trip_url(trips(:not_started_yet)), params: { trip: { state: :completed } }
+    assert_response 200
+  end
+
+  test "should fail if updating state from ongoing to not_started_yet" do
+    patch trip_url(trips(:ongoing)), params: { trip: { state: :not_started_yet } }
+    assert_response 422
   end
 end

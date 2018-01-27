@@ -1,9 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  state: 1
-  context: MyString
+  state: 0
+  context: "drive is x, route from y to z, leave time is w"
 
 two:
   state: 1
-  context: MyString
+  context: "drive is x, route from y to z, leave time is w"
+
+three:
+  state: 2
+  context: "drive is x, route from y to z, leave time is w"
+
+not_started_yet:
+  state: 0
+  context: "drive is x, route from y to z, leave time is w"
+
+ongoing:
+  state: 1
+  context: "drive is x, route from y to z, leave time is w"
+
+completed:
+  state: 2
+  context: "drive is x, route from y to z, leave time is w"
