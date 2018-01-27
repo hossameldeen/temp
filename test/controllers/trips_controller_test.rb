@@ -35,4 +35,12 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 204
   end
+
+  test "should fail if no context" do
+    skip "Check https://stackoverflow.com/questions/48476911/undefined-method-response-code-for-nilnilclass-for-integrationtest-that-fails"
+    assert_raises(ActiveRecord::NotNullViolation) do
+      post trips_url, params: { trip: { state: @trip.state } }
+    end
+    assert_response 400
+  end
 end
