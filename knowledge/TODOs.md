@@ -16,4 +16,6 @@ end
 
 2) How to represent locations? If with lat & long as floats, what about the precision? And how does Ruby represent numbers with decimal points?
 
+3) Can a trip be created with `ongoing` or `completed` state directly? Anyway, will probably ignore this point.
+
 ## Resolved
